@@ -1,0 +1,35 @@
+# Node.js
+node_modules/
+dist/
+build/
+
+# VSCode
+.vscode/
+
+# Environment files
+.env
+.env.local
+
+# Playwright test reports and screenshots
+test-results/
+playwright-report/
+screenshots/
+
+# Optional: log, cache, coverage
+*.log
+*.tmp
+*.swp
+coverage/
+.cache/
+
+# Mac & system files
+.DS_Store
+Thumbs.db
+
+# Optional: ignore output videos & traces
+videos/
+traces/
+
+# Ignore IDE files
+.idea/
+*.iml
