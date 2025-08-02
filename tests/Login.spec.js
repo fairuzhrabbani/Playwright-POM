@@ -65,7 +65,7 @@ test.describe('🔴 Negative Login Test Cases @negative', () => {
     });
 
     await test.step('Verify without Input Username', async () => {
-      await loginPage.validateRequired(loginData.requiredUsername.expectedError);
+      await loginPage.validateUsernameRequired(loginData.requiredUsername.expectedError);
     });
 
   });
@@ -83,7 +83,7 @@ test.describe('🔴 Negative Login Test Cases @negative', () => {
     });
 
     await test.step('Verify without Input Password', async () => {
-      await loginPage.validateRequired(loginData.requiredPassword.expectedError);
+      await loginPage.validatePasswordRequired(loginData.requiredPassword.expectedError);
     });
 
   });
@@ -101,7 +101,7 @@ test.describe('🔴 Negative Login Test Cases @negative', () => {
     });
 
     await test.step('Verify without Input Username and Password', async () => {
-      await loginPage.validateRequired(loginData.requiredUsernamePassword.expectedError);
+      await loginPage.validateUsernameAndPasswordRequired(loginData.requiredUsernamePassword.expectedError);
     });
 
   });

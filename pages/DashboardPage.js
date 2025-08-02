@@ -7,18 +7,20 @@ export class DashboardPage {
     constructor(page) {
         this.page = page;
         // this.adminMenu = page.locator("//ul[@class='oxd-main-menu']//li/a/span[text()='Admin']")
-        this.adminMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Admin' });
-        this.pimMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'PIM' });
-        this.leaveMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Leave' });
-        this.timeMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Time' });
-        this.recruitmentMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Recruitment' });
-        this.myInfoMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'My Info' });
-        this.performanceMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Performance' });
-        this.dashboardMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Dashboard' });
-        this.directoryMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Directory' });
-        this.maintenanceMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Maintenance' });
-        this.claimMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Claim' });
-        this.BuzzMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Buzz' });
+        //  this.adminMenu = page.locator('ul.oxd-main-menu li a span', { hasText: 'Admin' });
+        this.adminMenu = page.getByRole('link', { name: 'Admin' });      
+        this.pimMenu = page.getByRole('link', { name: 'PIM' });
+        this.leaveMenu = page.getByRole('link', { name: 'Leave' });
+        this.timeMenu = page.getByRole('link', { name: 'Time' });
+        this.recruitmentMenu = page.getByRole('link', { name: 'Recruitment' });
+        this.myInfoMenu = page.getByRole('link', { name: 'My Info' });
+        this.performanceMenu = page.getByRole('link', { name: 'Performance' });
+        this.dashboardMenu = page.getByRole('link', { name: 'Dashboard' });
+        this.directoryMenu = page.getByRole('link', { name: 'Directory' });
+        this.maintenanceMenu = page.getByRole('link', { name: 'Maintenance' });
+        this.claimMenu = page.getByRole('link', { name: 'Claim' });
+        this.BuzzMenu = page.getByRole('link', { name: 'Buzz' });
+        this.searchMenu = page.getByPlaceholder('Search');
     }
 
     async countDashboardMenu() {
