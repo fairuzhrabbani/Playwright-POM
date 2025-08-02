@@ -1,5 +1,7 @@
 // @ts-check
 import { defineConfig } from '@playwright/test'
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
@@ -10,6 +12,7 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
+    baseURL: process.env.BASE_URL,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     headless: false,
