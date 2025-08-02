@@ -4,8 +4,9 @@ export class LoginPage {
 
     constructor(page) {
         this.page = page;
-        this.usernameInput = page.getByPlaceholder('Username');
-        this.passwordInput = page.getByPlaceholder('Password');
+        // this.usernameInput = page.getByPlaceholder('Username');
+        this.usernameInput = page.locator('input[name="username"]');
+        this.passwordInput = page.locator('input[name="password"]');
         this.loginButton = page.locator("//button[normalize-space()='Login']");
         this.loginLogo = page.getByAltText("company-branding");
         this.loginDashboard = page.locator("//h6[normalize-space()='Dashboard']");
@@ -19,6 +20,16 @@ export class LoginPage {
 
     async login(username, password) {
         await this.usernameInput.fill(username);
+        await this.passwordInput.fill(password);
+        await this.loginButton.click();
+    }
+
+    async inputUsername(username) {
+        await this.usernameInput.fill(username);
+        await this.loginButton.click();
+    }
+
+    async inputPassword(password) {
         await this.passwordInput.fill(password);
         await this.loginButton.click();
     }
